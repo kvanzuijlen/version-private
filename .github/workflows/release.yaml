@@ -9,6 +9,7 @@ jobs:
       contents: "read"
       id-token: "write"
       packages: "write"
+      pull-requests: "read"
     name: release
     runs-on: ubuntu-latest
     steps:
