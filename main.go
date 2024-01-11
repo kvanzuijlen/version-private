@@ -24,7 +24,12 @@ func createLogger() *zap.Logger {
 func init() {
 	logger := createLogger()
 
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+			panic(err)
+		}
+	}(logger)
 
 	zap.ReplaceGlobals(logger)
 
