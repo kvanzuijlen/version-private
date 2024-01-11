@@ -6,8 +6,9 @@ on:
 jobs:
   release:
     permissions:
-      contents: "write"
+      contents: "read"
       id-token: "write"
+      packages: "write"
     name: release
     runs-on: ubuntu-latest
     steps:
