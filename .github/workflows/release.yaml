@@ -55,6 +55,12 @@ jobs:
           app-id: ${{ secrets.VERSION_CLI_UPDATER_APP_ID }}
           private-key: ${{ secrets.VERSION_CLI_UPDATER_PRIVATE_KEY }}
 
+      - name: Checkout action code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.draft_release.outputs.tag_name }}
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v2.0.0
         with:
