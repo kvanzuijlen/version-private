@@ -65,7 +65,7 @@ jobs:
         uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v2.0.0
         with:
           version: latest
-          args: build --clean
+          args: release --skip=publish --clean
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           GORELEASER_CURRENT_TAG: ${{ steps.draft_release.outputs.tag_name }}
