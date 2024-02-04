@@ -78,11 +78,8 @@ jobs:
 
       - name: Upload files
         run: |
-          gh release upload --clobber ${{ env.VERSION }} "${{ env.FILES }}"
+          gh release upload --clobber ${{ env.VERSION }} ${{ env.FILES }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.draft_release.outputs.tag_name }}
-          FILES: |
-            dist/version_*.tar.gz
-            dist/version_*.zip
-            dist/version_*_checksums.txt
+          FILES: dist/version_*.tar.gz dist/version_*.zip dist/version_*_checksums.txt
