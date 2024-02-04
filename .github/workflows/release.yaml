@@ -62,6 +62,7 @@ jobs:
           args: build --clean
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          GORELEASER_CURRENT_TAG: ${{ steps.draft_release.outputs.tag_name }}
 
       - name: Upload files
         run: |
