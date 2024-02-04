@@ -61,7 +61,7 @@ brews:
     license: "GNU GPLv3"
     skip_upload: auto
     commit_author:
-      name: kvanzuijlen
+      name: version
       email: 8818390+kvanzuijlen@users.noreply.github.com
     folder: Formula
     install: |-
