@@ -61,6 +61,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ steps.draft_release.outputs.tag_name }}
 
+      - name: Setup Go environment
+        uses: actions/setup-go@v5.0.0
+        with:
+          go-version-file: "go.mod"
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v2.0.0
         with:
